@@ -5,6 +5,7 @@ import Colleges from "../Pages/Colleges/Colleges";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import MyCollege from "../Pages/MyCollege/MyCollege";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "myCollege",
         element: <MyCollege></MyCollege>,
+      },
+      {
+        path: "userProfile",
+        element: <UserProfile></UserProfile>,
       },
     ],
   },

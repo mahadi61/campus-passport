@@ -4,7 +4,8 @@ const CollegeSection = () => {
   const collegeData = [
     {
       name: "Sample College 1",
-      image: "/path/to/college1.jpg",
+      image:
+        "https://wpdemo.zcubethemes.com/qeducato/wp-content/uploads/2023/03/evn-img-4.jpg",
       admissionDates: "August 15 - August 30",
       events: "Annual Fest, Tech Symposium",
       researchHistory: "Founded in 1950, 500+ research publications",
@@ -12,7 +13,8 @@ const CollegeSection = () => {
     },
     {
       name: "Sample College 2",
-      image: "/path/to/college2.jpg",
+      image:
+        "https://wpdemo.zcubethemes.com/qeducato/wp-content/uploads/2023/03/evn-img-4.jpg",
       admissionDates: "September 1 - September 20",
       events: "Cultural Fest, Hackathon",
       researchHistory: "Established in 1975, 300+ research publications",
@@ -20,7 +22,8 @@ const CollegeSection = () => {
     },
     {
       name: "Sample College 3",
-      image: "/path/to/college3.jpg",
+      image:
+        "https://wpdemo.zcubethemes.com/qeducato/wp-content/uploads/2023/03/evn-img-4.jpg",
       admissionDates: "October 1 - October 31",
       events: "Sports Meet, Entrepreneurship Summit",
       researchHistory: "Founded in 1990, 700+ research publications",

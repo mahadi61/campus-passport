@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaGraduationCap } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,13 +11,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-blue-500 p-4">
+      <nav className="bg-[#052c65] p-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <span className="text-white font-semibold text-xl">
-                University Admissions
-              </span>
+            <div className="flex items-center gap-3">
+              <FaGraduationCap className="text-4xl font-bold text-white" />
+              <p className="text-white  font-semibold text-2xl">
+                Campus Passport
+              </p>
             </div>
             <div className="flex items-center md:hidden">
               <button
@@ -83,6 +85,14 @@ const Navbar = () => {
                     My College
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/userProfile"
+                    className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md"
+                  >
+                    Login
+                  </Link>
+                </li>
               </ul>
               <div className="relative ml-4">
                 <input
@@ -105,6 +115,15 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
+              </div>
+              <div>
+                <Link to="/userProfile">
+                  <img
+                    className="w-10 h-10 rounded-full mx-3"
+                    src="https://wpdemo.zcubethemes.com/qeducato/wp-content/uploads/2023/03/evn-img-4.jpg"
+                    alt=""
+                  />
+                </Link>
               </div>
             </div>
           </div>

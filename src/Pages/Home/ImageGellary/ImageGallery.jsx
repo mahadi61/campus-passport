@@ -7,10 +7,11 @@ const ImageGallery = () => {
   ];
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4">
+      <h1 className="text-3xl font-semibold mb-4">Image Gallery</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {images.map((imageUrl, index) => (
-          <div key={index} className="rounded-lg overflow-hidden shadow-md">
+          <div key={index} className="overflow-hidden shadow-md">
             <img src={imageUrl} alt={`Image ${index}`} />
           </div>
         ))}
