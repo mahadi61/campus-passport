@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Admission from "../Pages/Admission/Admission";
+import Apply from "../Pages/Apply/Apply";
 import Colleges from "../Pages/Colleges/Colleges";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
@@ -8,7 +9,6 @@ import Login from "../Pages/Login/Login";
 import MyCollege from "../Pages/MyCollege/MyCollege";
 import Register from "../Pages/Register/Register";
 import UserProfile from "../Pages/UserProfile/UserProfile";
-import Apply from "../Pages/Apply/Apply";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "apply",
+        path: "apply/:id/:name",
         element: <Apply></Apply>,
       },
     ],

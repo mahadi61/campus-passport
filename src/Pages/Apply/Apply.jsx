@@ -1,16 +1,20 @@
 import { Controller, useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import Container from "../../Component/Container";
 
 const Apply = () => {
+  const { id, name } = useParams();
+  console.log(id);
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    const newData = { ...data, collegeId: 5 };
-    console.log(newData);
+    const newData = { ...data, collegeId: id };
     fetch("http://localhost:5000/apply", {
       method: "POST",
       headers: {
@@ -19,7 +23,12 @@ const Apply = () => {
       body: JSON.stringify(newData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire("Apply Successful!", "", "success");
+          reset();
+        }
+      });
   };
 
   return (
@@ -29,6 +38,9 @@ const Apply = () => {
           <h2 className="text-2xl text-center font-bold mb-4">
             Application Form
           </h2>
+          <p className="text-center mb-2">
+            You are applying for <span className="font-bold">{name}</span>
+          </p>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="w-full mx-auto max-w-xl"
