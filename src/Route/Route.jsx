@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Admission from "../Pages/Admission/Admission";
 import Apply from "../Pages/Apply/Apply";
+import CollegeDetails from "../Pages/CollegeDetails/CollegeDetails";
 import Colleges from "../Pages/Colleges/Colleges";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "apply/:id/:name",
         element: <Apply></Apply>,
+      },
+      {
+        path: ":id",
+        element: <CollegeDetails></CollegeDetails>,
       },
     ],
   },

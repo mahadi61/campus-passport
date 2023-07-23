@@ -17,7 +17,10 @@ const CollegeCard = ({ collegeData }) => {
         <p>Events: {collegeData.events}</p>
         <p>Research History: {collegeData.researchHistory}</p>
         <p>Sports: {collegeData.sports}</p>
-        <Link className="btn btn-outline border-none hover:bg-[#052c65] w-full bg-[#ff7350] text-white hover:text-white text-xl font-semibold mt-3">
+        <Link
+          to={`/${collegeData?._id}`}
+          className="btn btn-outline border-none hover:bg-[#052c65] w-full bg-[#ff7350] text-white hover:text-white text-xl font-semibold mt-3"
+        >
           Details
         </Link>
       </div>
