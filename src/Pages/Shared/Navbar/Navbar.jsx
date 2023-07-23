@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaGraduationCap } from "react-icons/fa";
+import { FaGraduationCap, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
@@ -9,6 +9,12 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // const text = e.target.text.value;
+    // fetch(``);
   };
 
   return (
@@ -105,28 +111,24 @@ const Navbar = () => {
                   )}
                 </li>
               </ul>
-              <div className="relative ml-4">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-8 pr-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-400"
-                />
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg
-                    className="h-5 w-5 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M9 18a9 9 0 100-18 9 9 0 000 18zM2.05 9a6.95 6.95 0 1113.9 0 6.95 6.95 0 01-13.9 0z"
-                      clipRule="evenodd"
+
+              <form onSubmit={handleSearch} className="join">
+                <div>
+                  <div>
+                    <input
+                      className="input bg-white join-item pl-8 pr-4 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-400"
+                      placeholder="Search..."
+                      name="text"
                     />
-                  </svg>
+                  </div>
                 </div>
-              </div>
+
+                <div className="indicator">
+                  <button className="btn join-item h-full bg-[#ff7350] text-white">
+                    <FaSearch></FaSearch>
+                  </button>
+                </div>
+              </form>
               {user && (
                 <div className="flex items-center">
                   <p className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md">

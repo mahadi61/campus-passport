@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import MyCollege from "../Pages/MyCollege/MyCollege";
 import Register from "../Pages/Register/Register";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import PrivetRoute from "./PrivetRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,11 +47,19 @@ const router = createBrowserRouter([
       },
       {
         path: "apply/:id/:name",
-        element: <Apply></Apply>,
+        element: (
+          <PrivetRoute>
+            <Apply></Apply>
+          </PrivetRoute>
+        ),
       },
       {
         path: ":id",
-        element: <CollegeDetails></CollegeDetails>,
+        element: (
+          <PrivetRoute>
+            <CollegeDetails></CollegeDetails>
+          </PrivetRoute>
+        ),
       },
     ],
   },
