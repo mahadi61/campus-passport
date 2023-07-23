@@ -4,8 +4,11 @@ import Admission from "../Pages/Admission/Admission";
 import Colleges from "../Pages/Colleges/Colleges";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
+import Login from "../Pages/Login/Login";
 import MyCollege from "../Pages/MyCollege/MyCollege";
+import Register from "../Pages/Register/Register";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import Apply from "../Pages/Apply/Apply";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +34,18 @@ const router = createBrowserRouter([
       {
         path: "userProfile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "apply",
+        element: <Apply></Apply>,
       },
     ],
   },

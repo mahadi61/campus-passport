@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -86,12 +89,21 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/userProfile"
-                    className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md"
-                  >
-                    Login
-                  </Link>
+                  {user ? (
+                    <Link
+                      onClick={() => logOut()}
+                      className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md"
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md"
+                    >
+                      Login
+                    </Link>
+                  )}
                 </li>
               </ul>
               <div className="relative ml-4">
@@ -116,15 +128,20 @@ const Navbar = () => {
                   </svg>
                 </div>
               </div>
-              <div>
-                <Link to="/userProfile">
-                  <img
-                    className="w-10 h-10 rounded-full mx-3"
-                    src="https://wpdemo.zcubethemes.com/qeducato/wp-content/uploads/2023/03/evn-img-4.jpg"
-                    alt=""
-                  />
-                </Link>
-              </div>
+              {user && (
+                <div className="flex items-center">
+                  <p className="text-white hover:text-gray-200 font-medium px-3 py-2 rounded-md">
+                    {user?.displayName}
+                  </p>
+                  <Link to="/userProfile">
+                    <img
+                      className="w-10 h-10 object-cover rounded-full mx-3"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

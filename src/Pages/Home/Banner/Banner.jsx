@@ -28,7 +28,7 @@ const Banner = () => {
                 <h2 className="text-xl lg:text-6xl font-bold uppercase">
                   World Best Colleges Are Here
                 </h2>
-                <p>There are lots of student who come here to learn dancing.</p>
+                <p>There are lots of student who come here to learn.</p>
                 <div>
                   <Link
                     to="/classes"
@@ -52,7 +52,7 @@ const Banner = () => {
                 <h2 className="text-xl lg:text-6xl font-bold uppercase">
                   World Best Colleges Are Here
                 </h2>
-                <p>There are lots of student who come here to learn dancing.</p>
+                <p>There are lots of student who come here to learn.</p>
                 <div>
                   <Link
                     to="/classes"
