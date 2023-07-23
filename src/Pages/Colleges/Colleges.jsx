@@ -1,9 +1,9 @@
-import CollegeSection from "../Home/College/CollegeSection";
+import AllCollege from "./AllCollege/AllCollege";
 
 const Colleges = () => {
   return (
     <div>
-      <CollegeSection></CollegeSection>
+      <AllCollege></AllCollege>
     </div>
   );
 };
