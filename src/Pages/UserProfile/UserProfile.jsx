@@ -15,13 +15,16 @@ const UserProfile = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/update-profile/${user?.email}`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://campus-passport-server.vercel.app/update-profile/${user?.email}`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
