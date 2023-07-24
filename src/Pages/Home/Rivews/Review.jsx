@@ -7,24 +7,18 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
+import { useState } from "react";
 import { Autoplay } from "swiper/modules";
 
-const reviews = [
-  {
-    id: 1,
-    name: "John Doe",
-    review: "Great product! I love it.",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    collegeName: "Evergreen College",
-    review: "Excellent service and fast delivery.",
-  },
-  // Add more reviews as needed
-];
-
 const Review = () => {
+  const [reviews, setReviews] = useState([]);
+
+  fetch("http://localhost:5000/all-colleges")
+    .then((res) => res.json())
+    .then((data) => {
+      setReviews(data);
+    });
+
   return (
     <>
       <Container>
@@ -44,17 +38,14 @@ const Review = () => {
         >
           {reviews.map((review) => (
             <SwiperSlide
-              key={review.id}
+              key={review?._id}
               className="flex justify-center items-center"
             >
               <div className="bg-[#ff7350] text-white text-center py-7 px-11 rounded-lg">
-                <h1 className="text-2xl font-semibold mb-2">
-                  {review.collegeName}
-                </h1>
-                <p className="text-xl">{review.review}</p>
-                <h1 className="text-xl font-semibold mb-2">
-                  Review By:{review.name}
-                </h1>
+                <h1 className="text-2xl font-semibold mb-2">{review?.name}</h1>
+                <p className="text-xl">{review?.review}</p>
+
+                <p>Rating: {review?.rating}</p>
               </div>
             </SwiperSlide>
           ))}
