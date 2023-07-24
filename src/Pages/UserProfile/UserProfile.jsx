@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { Controller, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Container from "../../Component/Container";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const UserProfile = () => {
+  const { user } = useContext(AuthContext);
   const {
     handleSubmit,
     control,
@@ -11,7 +14,8 @@ const UserProfile = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://campus-passport-server.vercel.app/", {
+    console.log(data);
+    fetch(`http://localhost:5000/update-profile/${user?.email}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
