@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Container from "../../../Component/Container";
 
 const RecommendedPapers = () => {
   const recommendedPapers = [
@@ -23,30 +24,36 @@ const RecommendedPapers = () => {
     },
   ];
   return (
-    <div>
-      <div className="container mx-auto p-4">
-        <h2 className="text-2xl font-bold mb-4">Recommended Research Papers</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {recommendedPapers.map((paper, index) => (
-            <div
-              key={index}
-              className="bg-white hover:bg-[#ff7350]  hover:text-white rounded-lg shadow-md p-4"
-            >
-              <h3 className="text-lg font-bold mb-2">{paper.title}</h3>
-              <p className="">{paper.description}</p>
-              <Link
-                to="https://www.sciencedirect.com/science/article/abs/pii/S0022369723003141"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mt-4 text-blue-500 hover:underline"
-              >
-                Read more
-              </Link>
+    <>
+      <Container>
+        <div>
+          <div className="container mx-auto p-4">
+            <h2 className="text-2xl font-bold mb-4">
+              Recommended Research Papers
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {recommendedPapers.map((paper, index) => (
+                <div
+                  key={index}
+                  className="bg-white hover:bg-[#ff7350]  hover:text-white rounded-lg shadow-md p-4"
+                >
+                  <h3 className="text-lg font-bold mb-2">{paper.title}</h3>
+                  <p className="">{paper.description}</p>
+                  <Link
+                    to="https://www.sciencedirect.com/science/article/abs/pii/S0022369723003141"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-4 text-blue-500 hover:underline"
+                  >
+                    Read more
+                  </Link>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </>
   );
 };
 
