@@ -14,9 +14,7 @@ const CollegeCard = ({ collegeData }) => {
       <div className="px-5 py-5">
         <h2 className="text-2xl font-bold mb-2">{collegeData.name}</h2>
         <p>Admission Dates: {collegeData.admissionDates}</p>
-        <p>Events: {collegeData.events}</p>
         <p>Research History: {collegeData.researchHistory}</p>
-        <p>Sports: {collegeData.sports}</p>
         <Link
           to={`/${collegeData?._id}`}
           className="btn btn-outline border-none hover:bg-[#052c65] w-full bg-[#ff7350] text-white hover:text-white text-xl font-semibold mt-3"

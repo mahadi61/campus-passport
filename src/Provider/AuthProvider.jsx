@@ -64,6 +64,12 @@ const AuthProvider = ({ children }) => {
     };
   }, [observer]);
 
+
+  // single college search
+  // const 
+
+
+
   const authInfo = {
     singUpWithEmail,
     profileUpdate,

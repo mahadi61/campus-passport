@@ -15,7 +15,7 @@ const Apply = () => {
 
   const onSubmit = (data) => {
     const newData = { ...data, collegeId: id };
-    fetch("http://localhost:5000/apply", {
+    fetch("https://campus-passport-server.vercel.app/apply", {
       method: "POST",
       headers: {
         "content-type": "application/json",

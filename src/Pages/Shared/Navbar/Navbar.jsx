@@ -13,8 +13,8 @@ const Navbar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // const text = e.target.text.value;
-    // fetch(``);
+    const text = e.target.text.value;
+    fetch(``);
   };
 
   return (
