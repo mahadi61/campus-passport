@@ -6,7 +6,7 @@ const CollegeTable = () => {
   const [collegeData, setCollegeData] = useState([]);
 
   useEffect(() => {
-    fetch("https://campus-passport-server.vercel.app/all-colleges")
+    fetch("http://localhost:5000/all-colleges")
       .then((res) => res.json())
       .then((data) => {
         setCollegeData(data);

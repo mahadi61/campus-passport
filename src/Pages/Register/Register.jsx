@@ -29,7 +29,7 @@ const Register = () => {
             .then(() => {
               const user = { name: name, email: email, photoUrl: photo };
               // save user info in database
-              fetch("https://campus-passport-server.vercel.app/add-user", {
+              fetch("http://localhost:5000/add-user", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",

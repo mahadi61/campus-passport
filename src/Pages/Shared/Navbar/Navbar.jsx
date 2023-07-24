@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, collegeSearch } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const text = e.target.text.value;
-    fetch(``);
+    collegeSearch(text);
   };
 
   return (

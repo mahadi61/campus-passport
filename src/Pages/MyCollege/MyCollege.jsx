@@ -6,7 +6,7 @@ const MyCollege = () => {
   // const { id } = useParams();
   const [collegeDetailsData, setCollegeDetailsData] = useState({});
   useEffect(() => {
-    // fetch(`https://campus-passport-server.vercel.app/college/${id}`)
+    // fetch(`http://localhost:5000/college/${id}`)
     // .then((res) => res.json())
     // .then((data) => setCollegeDetailsData(data));
   }, []);

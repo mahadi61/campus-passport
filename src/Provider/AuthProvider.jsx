@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [observer, setObserverState] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [collegeData, setCollegeData] = useState([]);
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -64,11 +65,12 @@ const AuthProvider = ({ children }) => {
     };
   }, [observer]);
 
-
   // single college search
-  // const 
-
-
+  const collegeSearch = (text) => {
+    fetch(`http://localhost:5000/single-college/${text}`)
+      .then((res) => res.json())
+      .then((data) => setCollegeData(data));
+  };
 
   const authInfo = {
     singUpWithEmail,
@@ -80,6 +82,8 @@ const AuthProvider = ({ children }) => {
     setObserverState,
     signInWithEmail,
     loading,
+    collegeSearch,
+    collegeData,
   };
 
   return (
