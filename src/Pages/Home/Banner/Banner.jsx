@@ -20,7 +20,7 @@ const Banner = () => {
         <SwiperSlide>
           <div>
             <img
-              src="../../../../../public/image/banner-img4.jpg"
+              src="https://i.ibb.co/ZzLYMg4/banner-img5.jpg"
               className="w-full "
             />
             <div className="absolute flex items-center pt-14 lg:pt-0 pl-8 h-full  bottom-0 bg-gradient-to-r from-[#21223a] to-[rgba(45, 21, 21, 0)]">
@@ -44,7 +44,7 @@ const Banner = () => {
         <SwiperSlide>
           <div>
             <img
-              src="../../../../../public/image/banner-img5.jpg"
+              src="https://i.ibb.co/fG3bKBR/banner-img4.jpg"
               className="w-full "
             />
             <div className="absolute flex items-center pt-14 lg:pt-0 pl-8 h-full  bottom-0 bg-gradient-to-r from-[#21223a] to-[rgba(45, 21, 21, 0)]">
