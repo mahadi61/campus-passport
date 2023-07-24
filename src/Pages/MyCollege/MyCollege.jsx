@@ -8,7 +8,7 @@ const MyCollege = () => {
   const [collegeDetailsData, setCollegeDetailsData] = useState([]);
   const [id, setId] = useState("");
   useEffect(() => {
-    fetch(`http://localhost:5000/my-college/${user?.email}`)
+    fetch(`https://campus-passport-server.vercel.app/my-college/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCollegeDetailsData(data));
   }, [user]);
@@ -19,7 +19,7 @@ const MyCollege = () => {
     const rating = event.target.rating.value;
     const data = { review, rating };
     console.log(data);
-    fetch(`http://localhost:5000/review/${id}`, {
+    fetch(`https://campus-passport-server.vercel.app/review/${id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

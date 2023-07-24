@@ -13,7 +13,7 @@ import { Autoplay } from "swiper/modules";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
 
-  fetch("http://localhost:5000/all-colleges")
+  fetch("https://campus-passport-server.vercel.app/all-colleges")
     .then((res) => res.json())
     .then((data) => {
       setReviews(data);

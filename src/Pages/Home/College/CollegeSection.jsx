@@ -6,7 +6,7 @@ const CollegeSection = () => {
   const [collegeData, setCollegeData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/featured-colleges")
+    fetch("https://campus-passport-server.vercel.app/featured-colleges")
       .then((res) => res.json())
       .then((data) => setCollegeData(data));
   }, []);

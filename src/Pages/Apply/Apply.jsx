@@ -16,14 +16,14 @@ const Apply = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/college/${id}`)
+    fetch(`https://campus-passport-server.vercel.app/college/${id}`)
       .then((res) => res.json())
       .then((data) => setCollegeDetailsData(data));
   }, []);
 
   const onSubmit = (data) => {
     const newData = { ...data, ...collegeDetailsData, collegeId: id };
-    fetch("http://localhost:5000/apply", {
+    fetch("https://campus-passport-server.vercel.app/apply", {
       method: "POST",
       headers: {
         "content-type": "application/json",

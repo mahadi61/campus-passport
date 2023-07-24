@@ -4,19 +4,24 @@ import CollegeCard from "../../Home/College/CollegeCard";
 
 const AllCollege = () => {
   const [allCollegeData, setAllCollegeData] = useState([]);
-  //   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/all-colleges")
+    fetch("https://campus-passport-server.vercel.app/all-colleges")
       .then((res) => res.json())
       .then((data) => {
         setAllCollegeData(data);
-        // setLoading(false);
+        setLoading(false);
       });
   }, []);
-  // TODO: set loading need to fix
-  //   if (loading) {
-  //     return <span className="loading loading-dots loading-lg"></span>;
-  //   }
+  if (loading) {
+    return (
+      <>
+        <div className="flex justify-center items-center">
+          <span className="loading loading-dots loading-lg"></span>
+        </div>
+      </>
+    );
+  }
 
   return (
     <div>

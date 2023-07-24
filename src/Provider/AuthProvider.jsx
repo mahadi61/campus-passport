@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
 
   // single college search
   const collegeSearch = (text) => {
-    fetch(`http://localhost:5000/single-college/${text}`)
+    fetch(`https://campus-passport-server.vercel.app/single-college/${text}`)
       .then((res) => res.json())
       .then((data) => setCollegeData(data));
   };
